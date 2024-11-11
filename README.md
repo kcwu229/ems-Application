@@ -2,6 +2,19 @@
 
 ![EMS Application](https://github.com/user-attachments/assets/f2c39f6b-b34a-4f34-a93b-493416963f6c)
 
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+  - [Add Employee](#add-employee)
+  - [Validation Check](#validation-check)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
 ## Overview
 The ems-Application System is a full-stack application built using Spring Boot for the backend, React.js for the frontend, and a MySQL database. It uses RESTful APIs for communication between the frontend and backend. The application is containerized using Docker and deployed on Google Cloud Platform (GCP) using Docker Compose for web hosting.
 
