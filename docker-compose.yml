@@ -1,0 +1,36 @@
+services:
+  mysql-container:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: Pk23863083
+      MYSQL_DATABASE: ems
+
+    ports:
+      - "3307:3306"
+    volumes:
+      - ~/mysql:/var/lib/mysql
+
+  back-end:
+    container_name: ems-backend
+    build:
+      context: ./ems-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container/ems
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Pk23863083
+    depends_on:
+      - mysql-container
+
+  front-end:
+    container_name: ems-frontend
+    build:
+      context: ems-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    depends_on:
+      - back-end
